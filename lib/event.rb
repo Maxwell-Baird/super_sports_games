@@ -32,4 +32,43 @@ class Event
     min_age_holder
   end
 
+  def average_age
+    average_age_holder = 0.0
+
+    @ages.each do |age|
+      average_age_holder += age
+    end
+
+    value = average_age_holder / @ages.size
+    value.round(2)
+  end
+
+  def standard_deviation_age
+    step1_value = 0.0
+    @ages.each do |value|
+      step1_value += value
+    end
+    step3_value = 0.0
+    step3_value = step1_value / @ages.size
+
+    step4_array = []
+    @ages.each do |value|
+      step4_array << (value - step3_value)
+    end
+
+    step5_array = []
+    step4_array.each do |value|
+      step5_array << (value * value)
+    end
+
+    step6_sum = 0
+    step5_array.each do |value|
+      step6_sum += value
+    end
+    step7_divide = step6_sum / @ages.size
+
+    total = Math.sqrt(step7_divide)
+    total.round(2)
+  end
+
 end
