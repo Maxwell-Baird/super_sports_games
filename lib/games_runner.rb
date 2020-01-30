@@ -27,4 +27,4 @@ while input != "quit" do
   puts "What is the name of the next event? Type quit here to see the summary"
   input = gets.chomp
 end #while input != "quit" do
-p game.summary
+puts game.summary
