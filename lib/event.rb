@@ -18,5 +18,18 @@ class Event
     max_age_holder
   end
 
+  def min_age
+    min_age_holder = 999
+
+    @ages.each do |age|
+
+      if age < min_age_holder
+        min_age_holder = age
+      end
+
+    end
+
+    min_age_holder
+  end
 
 end
