@@ -19,7 +19,7 @@ class Event
   end
 
   def min_age
-    min_age_holder = 999
+    min_age_holder = 99999999
 
     @ages.each do |age|
 
@@ -45,11 +45,12 @@ class Event
 
   def standard_deviation_age
     step1_value = 0.0
+    divide_value = @ages.size
     @ages.each do |value|
       step1_value += value
     end
     step3_value = 0.0
-    step3_value = step1_value / @ages.size
+    step3_value = step1_value / divide_value
 
     step4_array = []
     @ages.each do |value|
@@ -65,7 +66,7 @@ class Event
     step5_array.each do |value|
       step6_sum += value
     end
-    step7_divide = step6_sum / @ages.size
+    step7_divide = step6_sum / divide_value
 
     total = Math.sqrt(step7_divide)
     total.round(2)
